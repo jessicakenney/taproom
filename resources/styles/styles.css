@@ -15,6 +15,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-label{
+label , .formh3{
   color: white;
 }

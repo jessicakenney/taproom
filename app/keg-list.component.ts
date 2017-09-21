@@ -10,9 +10,16 @@ import { Keg } from './keg.model';
       <option value="almostEmptyKegs">Kegs Less Than 10</option>
  </select>
  <hr>
+ <select (change)="onFilterPriceChange($event.target.value)">
+     <option value="allPrices" selected="selected">All Prices</option>
+     <option value="lowPrice">Kegs Less Than $5</option>
+     <option value="highPrice">Kegs More Than $5</option>
+</select>
+<hr>
+
   <ul>
 
-    <div *ngFor = "let keg of childKegList | whatsRemaining:filterByRemainingPints">
+    <div *ngFor = "let keg of childKegList | whatsRemaining:filterByRemainingPints | pricey:filterByPrice" >
     <div class="col-md-3">
     <div class="well">
         <h3> {{keg.name}} </h3>
@@ -35,6 +42,7 @@ export class KegListComponent {
   @Output() clickSender = new EventEmitter();
   @Output() pourClickedSender = new EventEmitter();
   filterByRemainingPints: string;
+  filterByPrice: string;
 
   ABVColor(keg){
     if (keg.ABV <= 5 ){
@@ -56,6 +64,9 @@ export class KegListComponent {
   }
   onFilterChange(optionFromMenu){
     this.filterByRemainingPints = optionFromMenu;
+  }
+  onFilterPriceChange(optionFromMenu){
+    this.filterByPrice = optionFromMenu;
   }
 
   pourGrowler(clickedKeg){

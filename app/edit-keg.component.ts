@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
   template: `
   <div>
     <div *ngIf="childSelectedKeg">
-      <h3>Edit Keg</h3>
+      <h3 class="formh3">Edit Keg</h3>
       <input [(ngModel)]="childSelectedKeg.name">
       <input [(ngModel)]="childSelectedKeg.brand">
       <input [(ngModel)]="childSelectedKeg.pintPrice">

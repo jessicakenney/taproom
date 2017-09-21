@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>Epicodus TapRoom</h1>
+    <h1>Epicodus Beer Shed</h1>
     <new-keg (newKegSender)="addKeg($event)"> </new-keg>
     <div class="row">
     <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (pourClickedSender)="pourPint($event)" ></keg-list>
