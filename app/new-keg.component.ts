@@ -5,10 +5,10 @@ import { Keg } from './keg.model';
   selector: 'new-keg',
   template: `
   <div *ngIf="!showNewKegForm">
-    <button (click)="newKegButtonClicked()">New Keg</button>
+    <button (click)="newKegButtonClicked()">Add a New Keg</button>
   </div>
 
-  <div *ngIf="showNewKegForm">
+  <div *ngIf="showNewKegForm" class="newKegForm">
     <h1>New Keg</h1>
     <div>
        <label>Enter Keg Name:</label>
