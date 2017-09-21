@@ -6,10 +6,11 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Epicodus TapRoom</h1>
+    <new-keg (newKegSender)="addKeg($event)"> </new-keg>
     <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (pourClickedSender)="pourPint($event)" ></keg-list>
     <hr>
     <edit-keg [childSelectedKeg]="selectedKeg" (editDoneButtonClickedSender)="doneEditing()"> </edit-keg>
-    <new-keg (newKegSender)="addKeg($event)"> </new-keg>
+
   </div>
   `
 })

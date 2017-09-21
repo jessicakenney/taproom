@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
       <option value="fullKegs">Kegs Greater than 100</option>
       <option value="almostEmptyKegs">Kegs Less Than 10</option>
  </select>
-
+ <hr>
   <ul>
     <div *ngFor = "let keg of childKegList | whatsRemaining:filterByRemainingPints" class="well">
       <h3> {{keg.name}} </h3>
