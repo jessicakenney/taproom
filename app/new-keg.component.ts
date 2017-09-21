@@ -8,14 +8,13 @@ import { Keg } from './keg.model';
     <div>
      <label>Enter Keg Name:</label>
      <input #newName>
-     <button (click)="submitForm(newName.value)">Add</button>
+     <button (click)="submitForm(newName.value); newName.value='';">Add</button>
    </div>
   `
 })
 
 export class NewKegComponent {
   @Output() newKegSender = new EventEmitter();
-
 
   submitForm (newName: string){
     var newKegToAdd: Keg = new Keg(newName,"aaa", 5, 5);
